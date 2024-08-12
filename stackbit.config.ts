@@ -29,9 +29,8 @@ export const config = defineStackbitConfig({
         name: '_create_from_preset_ai', 
         actionId: 'config.actions._create_from_preset_ai.{uuid}', 
         locations: ['preset-card'],  
-        icon?: (typeof ICONS)[number],
-		hidden?: false,
-		preferredStyle?: 'button-primary',
+		hidden: false,
+		preferredStyle: 'button-primary',
 		inputFields: [
 		    { 
 		      type: 'strng',
