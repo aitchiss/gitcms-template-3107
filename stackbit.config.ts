@@ -24,6 +24,31 @@ export const config = defineStackbitConfig({
         type: 'files',
         presetDirs: ['sources/local/presets']
     },
+    actions: [{
+        type: 'model', 
+        name: '_create_from_preset_ai', 
+        actionId: 'config.actions._create_from_preset_ai.{uuid}', 
+        locations: ['preset-card'],  
+        icon?: (typeof ICONS)[number],
+		hidden?: false,
+		preferredStyle?: 'button-primary',
+		inputFields: [
+		    { 
+		      type: 'strng',
+		      name: 'contentUrl'
+		    },
+		    {
+		      type: 'text',
+		      name: 'customPrompt'
+		    },
+		    {
+		      // the 'preset' field is hidden because it is added automatically
+		      type: 'json',
+		      name: 'preset',
+		      hidden: true
+		    }
+		  ]
+    }],
     siteMap: ({ documents, models }): SiteMapEntry[] => {
         const pageModels = models.filter((model) => model.type === 'page').map((model) => model.name);
         return documents
